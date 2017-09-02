@@ -77,6 +77,9 @@ library(reshape2)
 
     GroupedData <- dcast(tablemelt, subjectnumber + activity ~ variable, mean) # Groups Data by subject, activity, calculates mean for each variable
 
+	colnames(GroupedData)[3:81] <- paste("Mean of", colnames(GroupedData)[3:81], sep=" ") # label cols 3:81 as "Mean of" the variable
+
+	
 ###final tidy dataset    
     print(GroupedData) 
  
