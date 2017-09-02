@@ -1,55 +1,79 @@
-Original Data Notes below Kat's Analysis
+Kat's Analysis of Samsung Data
 ======
+
+This data was obtained from the UCI Machine Learning Repository. 
+It contains experimental data from a group of 30 volunteers that
+performed 6 activities such as walking and whose measurements were
+recorded on their Samsung Galaxy II on the their waist. 
+
+More information and original file notes can be found below this analysis. 
+
+
+Prerequisites
+======
+
+- R is required
+
 
 Kat's Analysis:
 ======
----Reading the Dataset
+1. Reading the Dataset
 
-~ set working directory to folder with Samsung Dataset	
-	ex: C:\Users\sneakekat\Desktop\Data Science Toolkit\GettingCleaningData\Week4\getdata_projectfiles_UCI HAR Dataset\UCI HAR Dataset
+	- set working directory to folder with Samsung Dataset	
+			- ex: C:\Users\sneakekat\Desktop\Data Science Toolkit\GettingCleaningData\Week4\getdata_projectfiles_UCI HAR Dataset\UCI HAR Dataset
 	
 
---Why is it a Tidy data?
+2. Why is it a Tidy data?
 
-~ Intertial Signals Ommitted for BOTH sets, because they did not have mean() or std() values needed for analysis
-~ Final Data describes:
-	a) activity descriptor (walking, walking upstairs, etc) # originally was coded by number
-	b) subject (denoted by a number)
-	c) variables with descriptors that only represent mean() or std() (ex,fBodyBodyGyroJerkMag-std() all 81 metrics recorded per subject, per activity)
+* Intertial Signals Ommitted for BOTH sets, because they did not have mean() or std() values needed for analysis
+* Final Data describes:
+	* activity descriptor (walking, walking upstairs, etc) # originally was coded by number
+	* subject (denoted by a number)
+	* variables with descriptors that only represent mean() or std() (ex,fBodyBodyGyroJerkMag-std() all 81 metrics recorded per subject, per activity)
 			*** there is a question as to whether meanfreq() should be included, since I do not know the application of the data, I kept it
-	d) complete data (not sorted by group or mean) is 10299 X 81
+	* complete data (not sorted by group or mean) is 10299 X 81
 			*** this sums to the rows of test data(2947) + train data(7352)
 			*** 81 indicates 2 descriptive columns + 79 measurements 
 
 
-~Cleaned up in two parts (first Test, then Training Data)
-	A) test data read into R  (dimensions 2947 X 561)
-	B) features (column names) 561 rows read into R
+3. Cleaned up in two parts (first Test, then Training Data)
+	* test data read into R  (dimensions 2947 X 561)
+	* features (column names) 561 rows read into R
 		***This variable was also used for Training Data
-	C) Features added as Test Data Column Titles
-	D) Activity labels (6 X 1) loaded into R, (activity_labels.txt)
+	* Features added as Test Data Column Titles
+	* Activity labels (6 X 1) loaded into R, (activity_labels.txt)
 		***This variable was used for Training Data
-	E) Activity Test Data (y_test.txt) was loaded , dim of (2947 X 1) 
-	F) Activity labels were matched with Test Activity Data (y_test.txt)
-	G) Activity labels were added as a column to test data, make Test Data dims (2947 X 562)
-	H) Subject data loaded, dim (2947 X 1)
-	I) Subject data added as column to Test Data (dim 2947 X 563)
-	J) Subsetted data with column names including "mean", "std", dim(2947 X 81)
+	* Activity Test Data (y_test.txt) was loaded , dim of (2947 X 1) 
+	* Activity labels were matched with Test Activity Data (y_test.txt)
+	* Activity labels were added as a column to test data, make Test Data dims (2947 X 562)
+	* Subject data loaded, dim (2947 X 1)
+	* Subject data added as column to Test Data (dim 2947 X 563)
+	* Subsetted data with column names including "mean", "std", dim(2947 X 81)
 
-*** K) Completed Steps A-J for Training Data, except Training Data has Dims of 7352 X 561
-	- Activity Train Data has dims of 7352 X 1 (y_train.txt)
-	- Subject data has dims of 7352 X1 (subject_train.txt)
-	L) Merged complete Trainng Data with Test Data with total dims of (10299 X 81)
+		* Complete steps above for Training Data, except Training Data has Dims of 7352 X 561
+	* Activity Train Data has dims of 7352 X 1 (y_train.txt)
+	* Subject data has dims of 7352 X1 (subject_train.txt)
+	* Merged complete Trainng Data with Test Data with total dims of (10299 X 81)
 
 
-~ Sorting Data by Subject and Activity Level to give Mean for each
-	A) Data was melted by subject number and activity, variables were descriptor measurements such as "fBodyBodyGyroJerkMag-std()"
-	B) Data was dcast to create a dataset 180 X 81
+4. Sorting Data by Subject and Activity Level to give Mean for each
+	* Data was melted by subject number and activity, variables were descriptor measurements such as "fBodyBodyGyroJerkMag-std()"
+	* Data was dcast to create a dataset 180 X 81
 
-Reading the Dataset
+5. Reading the Dataset
 =====
 
-write.table(dcastTest, "groupedData.txt", row.name=FALSE)
+	* write.table(dcastTest, "groupedData.txt", row.name=FALSE)
+
+6. Authors
+======
+Kat
+
+7. Acknowledgements
+======
+Thank you google, the wonderful stackoverflow community, and 
+students of coursera course that posted on the message board. 
+Without you this assignment would NOT have been possible.
 
 
 ORIGINAL READ ME FILE PROVIDED BY OWNERS OF DATA IS BELOW
