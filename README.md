@@ -36,7 +36,8 @@ Kat's Analysis:
 			*** 81 indicates 2 descriptive columns + 79 measurements 
 
 
-3. Cleaned up in two parts (first Test, then Training Data)
+3. file runanalysis.R does the following: 
+* Cleans up data in two parts (first Test, then Training Data)
 	* test data read into R  (dimensions 2947 X 561)
 	* features (column names) 561 rows read into R
 		***This variable was also used for Training Data
