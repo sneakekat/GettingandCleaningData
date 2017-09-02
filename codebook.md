@@ -1,10 +1,10 @@
 
-subjectnumber 
+1. subjectnumber 
 	* indicates subject number given by researchers
 	* numbers are 1-30
 	* there are multiple measurements for each activity type per subjectnumber
 	
-activity
+2. activity
 	* original activity_labels file was coded as below
 	* my analysis converts numbers to activity labels, see below
 		* 1 WALKING
@@ -14,7 +14,7 @@ activity
 		* 5 STANDING
 		* 6 LAYING
 
-Variables (measurements) that were kept must contain one of the following:
+3. Variables (measurements) that were kept must contain one of the following:
 	* mean(): Mean value
 	* std(): Standard deviation
 	* meanFreq(): Weighted average of the frequency components to obtain a mean frequency
@@ -25,7 +25,7 @@ Variables (measurements) that were kept must contain one of the following:
 	* tBodyGyroMean
 	* tBodyGyroJerkMean
 
-runanalysis.R finds the mean of variables grouped by subjectnumber and activity
+4. runanalysis.R finds the mean of variables grouped by subjectnumber and activity
 	* that calculation is indicated by prefix "Mean of"
 
 
