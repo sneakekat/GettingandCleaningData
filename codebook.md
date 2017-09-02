@@ -24,7 +24,9 @@ Variables (measurements) that were kept must contain one of the following:
 	* tBodyAccJerkMean
 	* tBodyGyroMean
 	* tBodyGyroJerkMean
-	
+
+runanalysis.R finds the mean of variables grouped by subjectnumber and activity
+	* that calculation is indicated by prefix "Mean of"
 
 
 The complete list of original variables of each feature vector is available in 'features.txt'
