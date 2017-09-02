@@ -8,7 +8,7 @@ recorded on their Samsung Galaxy II on the their waist.
 
 More information and original file notes can be found below this analysis. 
 
-
+ 
 Prerequisites
 ======
 
